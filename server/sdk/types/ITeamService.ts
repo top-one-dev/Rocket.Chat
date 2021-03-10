@@ -10,4 +10,6 @@ export interface ITeamCreateParams {
 export interface ITeamService {
 	create(uid: string, params: ITeamCreateParams): Promise<ITeam>;
 	list(uid: string, filter?: string): Promise<Array<ITeam>>;
+	getInfoByName(teamName: string): Promise<Partial<ITeam> | undefined>;
+	getInfoById(teamId: string): Promise<Partial<ITeam> | undefined>;
 }
